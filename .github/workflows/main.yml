@@ -1,0 +1,22 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Shitaraba Health Check
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on:
+  schedule:
+  - cron: "* * * * *"
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  check:
+    name: check
+    runs-on: ubuntu-latest
+    steps:
+    - name: URL Health Check
+      uses: Jtalk/url-health-check-action@v1.3
+      with:
+        url: https://jbbs.shitaraba.net/internet/24795/head.txt
+        max-attempts: 2
+        retry-delay: 5s

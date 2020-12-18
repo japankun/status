@@ -23,4 +23,3 @@ jobs:
         url: ${{secrets.HEALTHCHECKS_IO_PING_URL}}
         max-attempts: 1
         retry-delay: 5s
-
